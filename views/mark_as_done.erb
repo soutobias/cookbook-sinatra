@@ -1,0 +1,15 @@
+<h2>-- Here are all your recipes --</h2>
+<br>
+<% @recipes.each_with_index do |recipe, index| %>
+  <li>
+    <%= "#{index + 1} - #{recipe.name}" %>
+  </li>
+<% end %>
+
+<h2>"Whats is the number of the receipe you want to mark as done?</h2>
+
+<form action="/mark_as_done/post">
+  <label for="index">Index:</label>
+  <input type="text" id="index" name="index"><br><br>
+  <input type="submit" value="Submit">
+</form>

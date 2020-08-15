@@ -1,0 +1,19 @@
+<h2>-- Here are all your recipes --</h2>
+<br>
+<% @recipes.each do |recipe| %>
+  <li>
+    <% recipe.done? ? x = "X" : x = " "%>
+    <%= "[#{x}] #{recipe.name} (#{recipe.prep_time} min)" %>
+  </li>
+<% end %>
+
+<h2>What do you want to do next?</h2>
+<a href="/list">List all recipes</a>
+<br>
+<a href="/create">Add a recipe recipes</a>
+<br>
+<a href="/destroy">Delete a recipe</a>
+<br>
+<a href="/internet">Import recipes from the Internet</a>
+<br>
+<a href="/mark_as_done">Mark recipe as done</a>

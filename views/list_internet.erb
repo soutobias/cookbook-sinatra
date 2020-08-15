@@ -1,0 +1,18 @@
+<h2>-- Here are all your recipes --</h2>
+<br>
+<% @recip_net[0].each_with_index do |recipe, index| %>
+  <li>
+    <%= "#{index + 1} - #{recipe}" %>
+  </li>
+<% end %>
+
+<h2>Which recipe would you like to import? (enter index)</h2>
+
+<form action="/internet/post2">
+  <label for="choice">Choice:</label>
+  <input type="text" id="choice" name="choice"><br><br>
+  <input type="hidden" id="ingredient" name="ingredient" value=<%= "#{@ingr}" %>><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+
